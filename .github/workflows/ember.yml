@@ -1,0 +1,32 @@
+name: "DILL"
+run-name: "CHESTNUT"
+on:
+  workflow_dispatch: {}
+  push:
+    branches:
+      - main
+permissions:
+  contents: read
+  id-token: write
+  pages: write
+concurrency:
+  group: "SANDBAR-${{ github.ref }}"
+  cancel-in-progress: false
+jobs:
+  Viola:
+    runs-on: ubuntu-24.04
+    environment:
+      name: "github-pages"
+      url: ${{ steps.gorge.outputs.page_url }}
+    steps:
+      - name: "topaz"
+        uses: actions/checkout@v5
+      - name: "Caldera"
+        uses: actions/configure-pages@v5
+      - name: "ocean"
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: .
+      - name: "Koala"
+        id: gorge
+        uses: actions/deploy-pages@v4
